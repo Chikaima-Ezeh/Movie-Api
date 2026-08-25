@@ -12,13 +12,14 @@ nav {
   color: white;
   gap: 10rem;
   align-items: center;
+  height: 10vh;
 }
 
 .nav-image {
   width: 100px;
 }
 .nav-image img {
-  width: 80px;
+  width: 60px;
   height: auto;
 }
 /* .nav-links {
@@ -33,4 +34,52 @@ nav {
 .nav-link li a {
   color: white;
   font-size: 1.5rem;
+  font-style: oblique;
+}
+.nav-link li a:hover {
+  color: beige;
+}
+.slid img {
+  width: 100%;
+  height: 100%;
+}
+.slider-cont {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+.slid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: all 1s ease-in;
+  opacity: 0;
+}
+
+.nextBtn1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  font-weight:bolder;
+  background-color: black;
+  color: red;
+  position: absolute;
+  bottom: 280px;
+  border: none;
+  left: 5px;
+}
+.nextBtn2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: black;
+  color: red;
+  position: absolute;
+  bottom: 280px;
+  right: 5px;
+  border: none;
 }
