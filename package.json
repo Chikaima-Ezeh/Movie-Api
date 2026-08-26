@@ -1,0 +1,8 @@
+{
+  "name": "kitsu-cove-catalogue",
+  "version": "1.0.0",
+  "description": "A beginner-friendly anime movie and series catalogue.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

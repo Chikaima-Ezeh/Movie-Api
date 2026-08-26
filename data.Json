@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Jujutsu Legacy",
+    "type": "Series",
+    "score": 8.7,
+    "episodes": 24,
+    "year": 2023,
+    "genres": ["Action", "Fantasy"],
+    "image": "images/jjk.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Moriarty: The Final Case",
+    "type": "Movie",
+    "score": 8.4,
+    "episodes": 1,
+    "year": 2024,
+    "genres": ["Mystery", "Drama"],
+    "image": "images/Moriarty.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Rainfall Market",
+    "type": "Series",
+    "score": 8.1,
+    "episodes": 12,
+    "year": 2022,
+    "genres": ["Romance", "Slice of life"],
+    "image": "images/murakami.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Bookshop Beyond Time",
+    "type": "Movie",
+    "score": 7.9,
+    "episodes": 1,
+    "year": 2021,
+    "genres": ["Fantasy", "Adventure"],
+    "image": "images/Book.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Audition of the Stars",
+    "type": "Series",
+    "score": 8.5,
+    "episodes": 16,
+    "year": 2024,
+    "genres": ["Music", "Drama"],
+    "image": "images/AUDICIÓN.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Under the Oak Tree",
+    "type": "Series",
+    "score": 8.3,
+    "episodes": 14,
+    "year": 2023,
+    "genres": ["Romance", "Fantasy"],
+    "image": "images/under the oak tree novel.jpg"
+  },
+  {
+    "id": 7,
+    "title": "The Wicked Woman's Wish",
+    "type": "Movie",
+    "score": 7.8,
+    "episodes": 1,
+    "year": 2022,
+    "genres": ["Drama", "Fantasy"],
+    "image": "images/A Time-Bound Wicked Woman Wishes for the Fall of the Empire.jpg"
+  },
+  {
+    "id": 8,
+    "title": "The Locked Library",
+    "type": "Series",
+    "score": 8.0,
+    "episodes": 10,
+    "year": 2024,
+    "genres": ["Mystery", "Adventure"],
+    "image": "images/The Locked Library Exclusive_ The Book That Broke the World by Mark Lawrence_ Front Dustcover Design.jpg"
+  }
+]

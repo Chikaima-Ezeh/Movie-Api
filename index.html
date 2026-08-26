@@ -3,46 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Api</title>
+    <meta name="description" content="A beginner-friendly anime movie and series catalogue." />
+    <title>Kitsu Cove | Movies & Series</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="fontawesome-free-6.4.0-webflash/css/all.min.css"
-    />
-    
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-webflash/css/all.min.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="nav-image">
-          <img src="./images/logo.jpg" />
-        </div>
-        <div class="nav-links">
-          <ul class="nav-link">
-            <li><a href="#">Home</a></li>
-            <li><a href='#'>Anime</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Kitsu Cove home">
+          <img src="images/logo.jpg" alt="" />
+          <span>Kitsu<span>Cove</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#library" data-filter-link="Movie">Movies</a></li>
+          <li><a href="#library" data-filter-link="Series">Series</a></li>
+          <li><a href="#continue-watching">My list</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="icon-button theme-button" aria-label="Switch colour theme">
+            <i class="fa-regular fa-moon"></i>
+          </button>
+          <a class="profile-button" href="#library" aria-label="Open profile">
+            <i class="fa-regular fa-user"></i>
+          </a>
         </div>
       </nav>
-       </header>
-      <main>
-         <div>
-        <div class="slider-cont">
-        <div class="slid slide" id="slide1"><img src="./images/slide1.jpg" /></div>
-        <div class="slid slide" id="slide2"><img src="./images/slide2.jpg" /></div>
-        <div class="slid slide" id="slide3"><img src="./images/slide3.jpg" /></div>
-        <div class="slid  slide"id="slide4"><img src="./images/slide4.jpg" /></div>
-      </div>
-      <div >
-        <button class="nextBtn1">←</button>
-        <button class="nextBtn2">→</button>
-      </div>
-     
-       
-      </main>
-     
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><i class="fa-solid fa-star"></i> Featured this week</p>
+          <h1>Stories that stay<br />with you.</h1>
+          <p class="hero-copy">Find your next anime movie or series, keep track of episodes, and build a watchlist you love.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#library"><i class="fa-solid fa-play"></i> Browse titles</a>
+            <button class="secondary-button" type="button" id="hero-save-button">
+              <i class="fa-regular fa-bookmark"></i> My list
+            </button>
+          </div>
+        </div>
+        <div class="hero-badge" aria-label="Featured title rating 9.1 out of 10">
+          <span>Featured title</span>
+          <strong><i class="fa-solid fa-star"></i> 9.1</strong>
+        </div>
+      </section>
+
+      <section class="content-section" id="continue-watching">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Pick up where you stopped</p>
+            <h2><i class="fa-solid fa-circle-play"></i> Continue watching</h2>
+          </div>
+          <div class="scroll-actions" aria-label="Scroll continue watching list">
+            <button class="icon-button scroll-left" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="icon-button scroll-right" aria-label="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="continue-list">
+          <article class="continue-card">
+            <img src="images/slide2.jpg" alt="The Crimson Painter cover" />
+            <div class="continue-shade"></div><span class="episode-label">EP 8</span>
+            <div class="continue-info"><h3>The Crimson Painter</h3><p>Episode 8 · 24 min left</p><div class="progress"><span style="width: 68%"></span></div></div>
+          </article>
+          <article class="continue-card">
+            <img src="images/slide3.jpg" alt="Moonlit Promise cover" />
+            <div class="continue-shade"></div><span class="episode-label">EP 5</span>
+            <div class="continue-info"><h3>Moonlit Promise</h3><p>Episode 5 · 11 min left</p><div class="progress"><span style="width: 42%"></span></div></div>
+          </article>
+          <article class="continue-card">
+            <img src="images/slide4.jpg" alt="The Last Guardian cover" />
+            <div class="continue-shade"></div><span class="episode-label">EP 11</span>
+            <div class="continue-info"><h3>The Last Guardian</h3><p>Episode 11 · 7 min left</p><div class="progress"><span style="width: 82%"></span></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section library-section" id="library">
+        <div class="library-heading">
+          <div><p class="section-kicker">Movies and series</p><h2><i class="fa-solid fa-fire"></i> Explore the library</h2></div>
+          <form class="search-form" id="search-form" role="search">
+            <label class="visually-hidden" for="search-input">Search anime</label>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="search-input" name="search" type="search" placeholder="Search anime..." autocomplete="off" />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div class="filter-row" aria-label="Filter the catalogue">
+          <button class="filter-button active" type="button" data-filter="All">All</button>
+          <button class="filter-button" type="button" data-filter="Movie"><i class="fa-solid fa-film"></i> Movies</button>
+          <button class="filter-button" type="button" data-filter="Series"><i class="fa-solid fa-tv"></i> Series</button>
+        </div>
+        <p class="results-message" id="results-message" aria-live="polite">Loading the catalogue...</p>
+        <div class="show-grid" id="show-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#home"><img src="images/logo.jpg" alt="" /><span>Kitsu<span>Cove</span></span></a>
+      <p>A beginner JavaScript project. Series data provided by <a href="https://www.tvmaze.com/api" target="_blank" rel="noreferrer">TVMaze</a>.</p>
+      <p>&copy; <span id="current-year"></span> Kitsu Cove</p>
+    </footer>
+
+    <nav class="mobile-navigation" aria-label="Mobile navigation">
+      <a class="active" href="#home"><i class="fa-solid fa-house"></i><span>Home</span></a>
+      <a href="#library"><i class="fa-solid fa-border-all"></i><span>Browse</span></a>
+      <a href="#continue-watching"><i class="fa-solid fa-circle-play"></i><span>Watching</span></a>
+      <a href="#library"><i class="fa-regular fa-bookmark"></i><span>My list</span></a>
+    </nav>
     <script src="app.js"></script>
   </body>
 </html>
