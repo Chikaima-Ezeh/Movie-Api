@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Jujutsu Legacy",
+    "title": "Jujutsu Kaisen　おもしろい！！",
     "type": "Series",
     "score": 8.7,
     "episodes": 24,
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "title": "Moriarty: The Final Case",
+    "title": "Moriarty: The Final Case　すごいい！",
     "type": "Movie",
     "score": 8.4,
     "episodes": 1,
@@ -78,5 +78,25 @@
     "year": 2024,
     "genres": ["Mystery", "Adventure"],
     "image": "images/The Locked Library Exclusive_ The Book That Broke the World by Mark Lawrence_ Front Dustcover Design.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Fall in love you false Angels",
+    "type": "Series",
+    "score": 7.8,
+    "episodes": 24,
+    "year": 2021,
+    "genres": ["Romance", "Fantasy"],
+    "image": "images/fall in love, you false angels-Copy.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Never ever after",
+    "type": "Series",
+    "score": 9.8,
+    "episodes": 24,
+    "year": 2020,
+    "genres": ["Romance", "Fantasy"],
+    "image": "images/New but not New Book!!_This book has been on my ...-Copy.jpg"
   }
 ]

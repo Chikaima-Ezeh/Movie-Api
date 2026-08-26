@@ -11,6 +11,8 @@ const localPosters = [
   "images/under the oak tree novel.jpg",
   "images/A Time-Bound Wicked Woman Wishes for the Fall of the Empire.jpg",
   "images/The Locked Library Exclusive_ The Book That Broke the World by Mark Lawrence_ Front Dustcover Design.jpg",
+  "images/fall in love, you false angels-Copy.jpg",
+  "images/New but not New Book!!_This book has been on my ...-Copy.jpg",
 ];
 
 const showGrid = document.querySelector("#show-grid");
@@ -40,7 +42,9 @@ async function loadLocalCatalogue() {
     state.originalShows = shows;
     applyCurrentFilter();
   } catch (error) {
-    showGrid.innerHTML = createEmptyState("Start a local server, then refresh this page.");
+    showGrid.innerHTML = createEmptyState(
+      "Start a local server, then refresh this page.",
+    );
     resultsMessage.textContent = "The catalogue file could not be read.";
     console.error(error);
   }
@@ -48,11 +52,12 @@ async function loadLocalCatalogue() {
 
 // Turn one JavaScript show object into one HTML card.
 function createShowCard(show) {
-  const episodeText = show.type === "Movie"
-    ? "Film"
-    : show.episodes
-      ? `${show.episodes} episodes`
-      : show.status || "Series";
+  const episodeText =
+    show.type === "Movie"
+      ? "Film"
+      : show.episodes
+        ? `${show.episodes} episodes`
+        : show.status || "Series";
   const genreTags = show.genres
     .slice(0, 2)
     .map((genre) => `<span>${genre}</span>`)
@@ -121,11 +126,15 @@ function setActiveFilter(filterName) {
 }
 
 filterButtons.forEach((button) => {
-  button.addEventListener("click", () => setActiveFilter(button.dataset.filter));
+  button.addEventListener("click", () =>
+    setActiveFilter(button.dataset.filter),
+  );
 });
 
 document.querySelectorAll("[data-filter-link]").forEach((link) => {
-  link.addEventListener("click", () => setActiveFilter(link.dataset.filterLink));
+  link.addEventListener("click", () =>
+    setActiveFilter(link.dataset.filterLink),
+  );
 });
 
 // Search TVMaze, a public series API. No API key is needed.
@@ -144,7 +153,7 @@ async function searchShows(query) {
     const result = await response.json();
 
     // Convert the API's property names into the shape expected by our cards.
-    state.shows = result.slice(0, 8).map((item, index) => ({
+    state.shows = result.slice(0, 10).map((item, index) => ({
       id: item.show.id,
       title: item.show.name,
       type: "Series",
@@ -164,7 +173,8 @@ async function searchShows(query) {
       return show.title.toLowerCase().includes(query.toLowerCase());
     });
     setActiveFilter("All");
-    resultsMessage.textContent = "The API is unavailable, so local titles are shown instead.";
+    resultsMessage.textContent =
+      "The API is unavailable, so local titles are shown instead.";
     console.error(error);
   }
 }
@@ -204,13 +214,15 @@ document.querySelector(".theme-button").addEventListener("click", () => {
     : "fa-regular fa-moon";
 });
 
-document.querySelector("#hero-save-button").addEventListener("click", (event) => {
-  const button = event.currentTarget;
-  const isSaved = button.classList.toggle("saved");
-  button.innerHTML = isSaved
-    ? '<i class="fa-solid fa-check"></i> Saved'
-    : '<i class="fa-regular fa-bookmark"></i> My list';
-});
+document
+  .querySelector("#hero-save-button")
+  .addEventListener("click", (event) => {
+    const button = event.currentTarget;
+    const isSaved = button.classList.toggle("saved");
+    button.innerHTML = isSaved
+      ? '<i class="fa-solid fa-check"></i> Saved'
+      : '<i class="fa-regular fa-bookmark"></i> My list';
+  });
 
 const continueList = document.querySelector(".continue-list");
 document.querySelector(".scroll-left").addEventListener("click", () => {
