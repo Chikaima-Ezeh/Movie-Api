@@ -1,25 +1,14 @@
 "use strict";
 
-// API search results are paired with these local pictures.
-// The API supplies information, but artwork always comes from this project.
-const localPosters = [
-  "images/jjk.jpg",
-  "images/Moriarty.jpg",
-  "images/murakami.jpg",
-  "images/Book.jpg",
-  "images/AUDICIÓN.jpg",
-  "images/under the oak tree novel.jpg",
-  "images/A Time-Bound Wicked Woman Wishes for the Fall of the Empire.jpg",
-  "images/The Locked Library Exclusive_ The Book That Broke the World by Mark Lawrence_ Front Dustcover Design.jpg",
-  "images/fall in love, you false angels-Copy.jpg",
-  "images/New but not New Book!!_This book has been on my ...-Copy.jpg",
-];
-
 const showGrid = document.querySelector("#show-grid");
 const resultsMessage = document.querySelector("#results-message");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
 const filterButtons = document.querySelectorAll(".filter-button");
+
+// A tiny inline placeholder used only when the API has no poster at all.
+const noPosterImage =
+  "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400' viewBox='0 0 300 400'%3E%3Crect width='300' height='400' fill='%23191c25'/%3E%3Ctext x='50%25' y='50%25' fill='%239a9dab' font-family='sans-serif' font-size='16' text-anchor='middle' dominant-baseline='middle'%3ENo poster%3C/text%3E%3C/svg%3E";
 
 // State holds information that changes while the visitor uses the page.
 const state = {
@@ -153,7 +142,8 @@ async function searchShows(query) {
     const result = await response.json();
 
     // Convert the API's property names into the shape expected by our cards.
-    state.shows = result.slice(0, 10).map((item, index) => ({
+    // The poster now comes straight from TVMaze instead of a local stand-in.
+    state.shows = result.slice(0, 10).map((item) => ({
       id: item.show.id,
       title: item.show.name,
       type: "Series",
@@ -162,7 +152,7 @@ async function searchShows(query) {
       status: item.show.status,
       year: item.show.premiered ? item.show.premiered.slice(0, 4) : null,
       genres: item.show.genres.length ? item.show.genres : ["Television"],
-      image: localPosters[index % localPosters.length],
+      image: item.show.image ? item.show.image.medium : noPosterImage,
     }));
 
     setActiveFilter("All");
